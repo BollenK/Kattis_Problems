@@ -1,0 +1,24 @@
+10
+95.0129 61.5432
+23.1139 79.1937
+60.6843 92.1813
+48.5982 73.8207
+89.1299 17.6266
+76.2097 40.5706
+45.6468 93.5470
+1.8504 91.6904
+82.1407 41.0270
+44.4703 89.3650def dist(p1, p2):
+    return (p2[1] - p1[1]) / (p2[0] - p1[0]) if (p2[0] - p1[0]) != 0 else 0
+def main():
+
+    n = int(input())
+    l = [tuple(map(lambda p: float(p), input().split(" ") )) for n in range(n)]
+    G = [[dist(l[i], l[j]) if j!=n else 0 for j in range(n) ] for i in range(n)]
+    print(G)
+
+
+
+
+if __name__ == "__main__":
+    main()
