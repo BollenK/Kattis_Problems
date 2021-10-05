@@ -55,16 +55,17 @@ def main():
 
     l = [tuple(map(lambda p: float(p), input().split(" ") )) for n in range(n)]
     G = [[dist(l[i], l[j]) if j!=n else 0 for j in range(n) ] for i in range(n)]
-    print(G)
+    # print(G) 
     # return
 
     mst = primMST(n, G)
     print(mst)
+    # While loop for efficiency
     for i in range(n):
         print(mst[i], "-", i, "\t", G[i][ mst[i] ])
 
 
-    print(G)
+    # print(G)
 
 
 
